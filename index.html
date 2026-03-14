@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUJY検索</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="license.css">
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="header-image">
+<a href="index.html">
+<img src="icon.png" alt="RUJY net">
+</a>
+</div>
+
+<div class="about">
+<a href="about.html">RUJYネットについて</a>
+<a href="app.html">RUJYアプリ</a>
+</div>
+
+</header>
+
+
+<main class="main">
+
+<!--ChatGPT検索-->
+<h2 class="chatgpt">ChatGPTで検索</h2>
+
+<button class="nomalbtn">
+<a href="https://chatgpt.com/ja-JP/" target="_blank">
+ChatGPTで検索
+</a>
+</button>
+
+
+<!--Google検索-->
+<h2 class="google">Googleで検索</h2>
+
+<div class="googleinput">
+<input id="search" placeholder="検索ワードを入力">
+<br>
+<button onclick="search()">検索</button>
+</div>
+
+<!--GoogleMap-->
+<h2 class="googlemap">GoogleMapで検索</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d831455.2726974256!2d139.1090971102182!3d35.507439221128735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2z5p2x5Lqs6YO9!5e0!3m2!1sja!2sjp!4v1773356357140!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<!--今日は何の日-->
+<h2 class="today">今日は何の日</h2>
+<button onclick="searchToday()">Wikipediaで調べる</button>
+
+<!--カスタム検索エンジン-->
+<h2 class="custom-search">カスタム検索</h2>
+
+<div class="custom-search-box">
+  <input id="customSearchWord" placeholder="検索ワードを入力">
+  <br>
+  <div id="customEngineButtons"></div>
+</div>
+
+<h3>検索エンジンを追加</h3>
+<p style="font-size:0.85em;color:#555;">
+  ※ URLの検索ワード部分を <code>%s</code> に置き換えて入力してください。<br>
+  　例）YouTube: <code>https://www.youtube.com/results?search_query=%s</code><br>
+  　例）Wikipedia: <code>https://ja.wikipedia.org/w/index.php?search=%s</code>
+</p>
+
+<input id="engineName" placeholder="名前（例: YouTube）">
+<input id="engineURL" placeholder="URL（例: https://www.youtube.com/results?search_query=%s）">
+<br>
+<button onclick="addEngine()">エンジンを登録</button>
+<button onclick="toggleEngineList()">登録済み一覧</button>
+
+<div id="engineList" style="display:none;" class="bookdisplay"></div>
+
+
+<!--ブックマーク-->
+<h2 class="bookmark">ブックマーク</h2>
+
+<input id="siteName" placeholder="サイト名">
+<input id="siteURL" placeholder="URL https://">
+
+<br>
+
+<button onclick="addBookmark()">登録</button>
+
+<button onclick="toggleBookmarks()">ブックマーク表示</button>
+
+<div id="list" style="display:none;" class="bookdisplay"></div>
+
+
+</main>
+<footer class="footer">
+    <a href="license.css">ライセンスについて</a>
+   <small>&copy; 2026 RUJY.inc. All Rights Reserved.</small>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
