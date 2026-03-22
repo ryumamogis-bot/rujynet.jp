@@ -55,3 +55,11 @@ button a{
 background-color:darkgray;
 
 }
+@font-face {
+  font-family: 'PlaywriteDKUloopet-Light';
+  src: url('PlaywriteDKUloopet-Light.ttf') format('truetype');
+}
+
+body {
+  font-family: 'PlaywriteDKUloopet-Light', sans-serif;
+}
